@@ -1,3 +1,3 @@
 # Closers_Visual_Frame_Maker
 
-request Pillow, Pyqt5
+실행에 Pillow, Pyqt5가 필요합니다.
