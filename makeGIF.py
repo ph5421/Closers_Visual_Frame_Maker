@@ -1,24 +1,17 @@
-from PIL import Image,ImageChops
+from PIL import Image,ImageChops,ImageEnhance
 import glob
 
 def changeRGB(r,g,b,img):
 
-    rgb = img.split();
-    r_value = 256/100*r
-    g_value = 256/100*g
-    b_value = 256/100*b
+    rgb = img.split()
+    
+    rb = ImageEnhance.Brightness(rgb[0]).enhance(r/100)
+    gb = ImageEnhance.Brightness(rgb[1]).enhance(g/100)
+    bb = ImageEnhance.Brightness(rgb[2]).enhance(b/100)
 
-    r_mask = ImageChops.constant(rgb[0],int(r_value))
-    g_mask = ImageChops.constant(rgb[0],int(g_value))
-    b_mask = ImageChops.constant(rgb[0],int(b_value))
+    out_img = Image.merge(img.mode, [rb,gb,bb,rgb[3]])
 
-    rc = ImageChops.multiply(rgb[0],r_mask);
-    gc = ImageChops.multiply(rgb[1],g_mask);
-    bc = ImageChops.multiply(rgb[2],b_mask);
-
-    out_img = Image.merge(img.mode, [rc,gc,bc,rgb[3]])
-
-    return out_img 
+    return out_img
     
 
 def combine(layer1,layer2):
