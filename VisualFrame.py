@@ -29,19 +29,19 @@ class Ui_Dialog(object):
         Dialog.setModal(False)
         self.R_Slider = QtWidgets.QSlider(Dialog)
         self.R_Slider.setGeometry(QtCore.QRect(135, 230, 200, 20))
-        self.R_Slider.setMaximum(100)
+        self.R_Slider.setMaximum(500)
         self.R_Slider.setOrientation(QtCore.Qt.Horizontal)
         self.R_Slider.setObjectName("R_Slider")
         self.R_Slider.valueChanged.connect(self.R_Slider_Changed)
         self.G_Slider = QtWidgets.QSlider(Dialog)
         self.G_Slider.setGeometry(QtCore.QRect(135, 260, 200, 20))
-        self.G_Slider.setMaximum(100)
+        self.G_Slider.setMaximum(500)
         self.G_Slider.setOrientation(QtCore.Qt.Horizontal)
         self.G_Slider.setObjectName("G_Slider")
         self.G_Slider.valueChanged.connect(self.G_Slider_Changed)
         self.B_Slider = QtWidgets.QSlider(Dialog)
         self.B_Slider.setGeometry(QtCore.QRect(135, 290, 200, 20))
-        self.B_Slider.setMaximum(100)
+        self.B_Slider.setMaximum(500)
         self.B_Slider.setOrientation(QtCore.Qt.Horizontal)
         self.B_Slider.setObjectName("B_Slider")
         self.B_Slider.valueChanged.connect(self.B_Slider_Changed)
@@ -141,8 +141,8 @@ class Ui_Dialog(object):
             t=self.R_Lable.text()
             t=t[1:]
             self.R_Lable.setText(t)
-        if(int(self.R_Lable.text())>100):
-            self.R_Lable.setText("100")
+        if(int(self.R_Lable.text())>500):
+            self.R_Lable.setText("500")
         self.R_Slider.setValue(int(self.R_Lable.text()))
         self.example_image()
 
@@ -153,8 +153,8 @@ class Ui_Dialog(object):
             t=self.G_Lable.text()
             t=t[1:]
             self.G_Lable.setText(t)
-        if(int(self.G_Lable.text())>100):
-            self.G_Lable.setText("100")
+        if(int(self.G_Lable.text())>500):
+            self.G_Lable.setText("500")
         self.G_Slider.setValue(int(self.G_Lable.text()))
         self.example_image()
 
@@ -165,8 +165,8 @@ class Ui_Dialog(object):
             t=self.B_Lable.text()
             t=t[1:]
             self.B_Lable.setText(t)
-        if(int(self.B_Lable.text())>100):
-            self.B_Lable.setText("100")
+        if(int(self.B_Lable.text())>500):
+            self.B_Lable.setText("500")
         self.B_Slider.setValue(int(self.B_Lable.text()))
         self.example_image()
     
